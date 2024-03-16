@@ -64,8 +64,8 @@ public class SubscriptionService {
         }
 
         Product product = productService.getProductByAsin(asin);
-        if (product == null) {
-            throw new UnrecognizedAsinException(String.format("Unable to create subscription for ASIN: % s. " +
+        if (product == null) { //String.format is used incorrectly
+            throw new UnrecognizedAsinException(String.format("Unable to create subscription for ASIN: %s. " +
                                                                  "Unrecognized ASIN.", asin));
         }
 
